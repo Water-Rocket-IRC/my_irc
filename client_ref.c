@@ -21,6 +21,7 @@ int   main( int argc, char **argv){   int   client_socket;
 		printf( "접속 실패\n");
 		exit(1);
 	}
+
 	write(client_socket, argv[1], strlen(argv[1]) + 1); // +1: NULL까지 포함해서 전송
 	read ( client_socket, buff, BUFF_SIZE);
 	printf( "%s\n", buff);

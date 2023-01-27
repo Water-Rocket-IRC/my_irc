@@ -46,6 +46,7 @@ int		main( int argc, char *argv[]){
 			return 1;
 		}
 		std::cout << buff << std::endl;
+		std::cin.clear();
 	}
 	close(client_socket);
 	system("leaks -q client");

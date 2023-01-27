@@ -45,14 +45,14 @@ int   main(void) {
 			return 1;
 		}
 		read (client_socket, buff_rcv, BUFF_SIZE);
-		std::cout << BOLDCYAN << "Receive : " 
+		std::cout << BOLDCYAN << "Receive : "
 				  << RESET << buff_rcv << std::endl;
 		// const std::string& tmp(buff_snd);
 		// send(client_socket, tmp.c_str(), tmp.length() + 1, 0);
 		sprintf(buff_snd, "%s <= len : %lu", buff_rcv, strlen(buff_rcv));
 		write(client_socket, buff_snd, strlen(buff_snd) + 1); // +1: NULL까지 포함해서 전송
-		close(client_socket);
 	}
+	close(client_socket);
 }
 
 // https://badayak.com/entry/C언어-소켓-생성-함수-socket
